@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffaf7;
+  --foreground: #0f172a;
+  --vertex-surface: #fffdfb;
+  --vertex-primary: #f97316;
+  --vertex-primary-dark: #ea580c;
+  --vertex-border: #efd9cc;
+  --vertex-muted: #64748b;
+  --vertex-soft: #fff1ea;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-vertex-surface: var(--vertex-surface);
+  --color-vertex-primary: var(--vertex-primary);
+  --color-vertex-muted: var(--vertex-muted);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.vertex-hatch {
+  background:
+    linear-gradient(90deg, rgba(255, 250, 247, 0.8), rgba(255, 250, 247, 0.8)),
+    repeating-linear-gradient(
+      135deg,
+      rgba(249, 115, 22, 0.1) 0,
+      rgba(249, 115, 22, 0.1) 1px,
+      transparent 1px,
+      transparent 12px
+    );
+}
+
+.vertex-soft-shadow {
+  box-shadow:
+    0 16px 44px rgba(15, 23, 42, 0.05),
+    0 4px 16px rgba(249, 115, 22, 0.08);
 }
